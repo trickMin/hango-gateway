@@ -1,6 +1,6 @@
 ---
 kind: CustomResourceDefinition
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 metadata:
   name: cloudwatches.config.istio.io
   labels:
@@ -19,10 +19,16 @@ spec:
     - istio-io
     - policy-istio-io
   scope: Namespaced
-  version: v1alpha2
+  versions:
+    - name: v1alpha2
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
 ---
 kind: CustomResourceDefinition
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 metadata:
   name: dogstatsds.config.istio.io
   labels:
@@ -41,9 +47,15 @@ spec:
     - istio-io
     - policy-istio-io
   scope: Namespaced
-  version: v1alpha2
+  versions:
+    - name: v1alpha2
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: sidecars.networking.istio.io
@@ -64,10 +76,16 @@ spec:
     - istio-io
     - networking-istio-io
   scope: Namespaced
-  version: v1alpha3
+  versions:
+    - name: v1alpha3
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
 ---
 kind: CustomResourceDefinition
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 metadata:
   name: zipkins.config.istio.io
   labels:
@@ -86,5 +104,11 @@ spec:
     - istio-io
     - policy-istio-io
   scope: Namespaced
-  version: v1alpha2
+  versions:
+    - name: v1alpha2
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
 ---
